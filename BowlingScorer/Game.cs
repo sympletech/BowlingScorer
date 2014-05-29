@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
 
 namespace BowlingScorer
@@ -20,14 +19,12 @@ namespace BowlingScorer
         public void Roll(int i)
         {
             _frames[0].RecordRoll(i);
-
         }
 
         public int Score 
         {
             get { return this._frames.Sum(x => x.Score); }
         }
-
 
         public override string ToString()
         {

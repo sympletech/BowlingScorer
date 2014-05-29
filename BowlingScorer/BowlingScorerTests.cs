@@ -75,5 +75,40 @@ namespace BowlingScorer
             frame.RecordRoll(1);
             Assert.IsTrue(frame.Complete);
         }
+
+        [Test]
+        public void RollASpare()
+        {
+            var frame = new Frame(null);
+            frame.RecordRoll(5);
+            frame.RecordRoll(5);
+            frame.RecordRoll(5);
+
+            Assert.AreEqual(15, frame.Score);
+        }
+
+        [Test]
+        public void RollASpare_CheckNextFrame()
+        {
+            var frame2 = new Frame(null);
+            var frame = new Frame(frame2);
+            frame.RecordRoll(5);
+            frame.RecordRoll(5);
+            frame.RecordRoll(5);
+            frame.RecordRoll(3);
+
+            Assert.AreEqual(8, frame2.Score);
+        }
+
+        [Test]
+        public void RollAStrike()
+        {
+            var frame = new Frame(null);
+            frame.RecordRoll(10);
+            frame.RecordRoll(3);
+            frame.RecordRoll(3);
+
+            Assert.AreEqual(16, frame.Score);
+        }
     }
 }

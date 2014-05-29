@@ -14,11 +14,52 @@ namespace BowlingScorer
         {
             _next = frame;
         }
+
         public int Score { get { return _rolls.Sum(); } }
 
         public bool Complete
         {
             get { return _rolls.Count() == 2; }
+        }
+
+        internal void RecordRoll(int i)
+        {
+            // if spare
+            //   rolls.Count == 0, 1 add
+            //   rolls.Count == 2 add, pass
+
+            // if strike
+            //   rolls.Count == 0 add
+            //   rolls.Count == 1, 2 add, pass
+
+            // otherwise
+            //   rolls.Count == 0, 1 add
+
+            switch (_rolls.Count)
+            {
+                case 0:
+                    _rolls.Add(i);
+                    break;
+                case 1:
+                    _rolls.Add(i);
+                    //if (_rolls[0] == 10)
+                    //{
+                    //    if (_next != null) _next.RecordRoll(i);
+                    //}
+                    break;
+                case 2:
+                    if (_rolls.Count == 2 && _rolls[0] + _rolls[1] == 10)
+                        _rolls.Add(i);
+                    if (_next != null) 
+                        _next.RecordRoll(i);
+                    break;
+                default:
+                    if (_rolls.Count == 2 && _rolls[0] + _rolls[1] == 10)
+                        _rolls.Add(i);
+                    if (_next != null) 
+                        _next.RecordRoll(i);
+                    break;
+            }
         }
 
         public override string ToString()
@@ -28,20 +69,6 @@ namespace BowlingScorer
             results.AppendFormat("Rolls : {0} | {1}", string.Join(", ", this._rolls), this.Score);
 
             return results.ToString();
-        }
-
-        internal void RecordRoll(int i)
-        {
-            switch (_rolls.Count)
-            {
-                case 0:
-                case 1:
-                    _rolls.Add(i);
-                    break;
-                default:
-                    if(_next!=null) _next.RecordRoll(i);
-                    break;
-            }
         }
     }
 }

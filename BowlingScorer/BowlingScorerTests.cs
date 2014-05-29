@@ -70,9 +70,9 @@ namespace BowlingScorer
         {
             var frame = new Frame(null);
 
-            frame.Rolls.Add(1);
+            frame.RecordRoll(1);
             Assert.IsFalse(frame.Complete);
-            frame.Rolls.Add(1);
+            frame.RecordRoll(1);
             Assert.IsTrue(frame.Complete);
         }
     }

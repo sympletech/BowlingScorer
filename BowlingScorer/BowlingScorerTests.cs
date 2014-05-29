@@ -1,7 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
-using ApprovalTests;
+﻿using ApprovalTests;
 using ApprovalTests.Reporters;
+
 using NUnit.Framework;
 
 namespace BowlingScorer
@@ -65,11 +64,11 @@ namespace BowlingScorer
             // assert
             Approvals.Verify(game);
         }
+
         [Test]
         public void CompleteFrame()
         {
-
-            var frame = new Frame();
+            var frame = new Frame(null);
 
             frame.Rolls.Add(1);
             Assert.IsFalse(frame.Complete);

@@ -8,36 +8,32 @@ namespace BowlingScorer
     {
         public Game()
         {
-            this.Frames = new List<Frame>();
-            
+            this.Frames = new Frame[10];
+            Frame previous = null;
+            for (var i = Frames.Length - 1; i >= 0; i--)
+            {
+                previous = Frames[i] = new Frame(previous);
+            }
         }
         
         public void Roll(int i)
         {
-            Frame frame;
-            if (!Frames.Any() || Frames.Last().Complete)
-            {
-                frame = new Frame();
-                Frames.Add(frame);
-            }
-            else
-            {
-                frame = Frames.Last();
-            }
-            frame.Rolls.Add(i);
+            Frames[0].RecordRoll(i);
+
         }
 
-        public int Score {
+        public int Score 
+        {
             get { return this.Frames.Sum(x => x.Score); }
         }
 
-        public List<Frame> Frames { get; set; }
+        public Frame [] Frames { get; set; }
 
         public override string ToString()
         {
             var results = new StringBuilder();
             results.AppendFormat("Score : {0}", this.Score).AppendLine();
-            for (int i = 0; i < Frames.Count; i++ )
+            for (int i = 0; i < Frames.Length; i++ )
             {
                 var frame = Frames[i];
 

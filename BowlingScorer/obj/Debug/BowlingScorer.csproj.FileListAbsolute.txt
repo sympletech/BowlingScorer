@@ -1,0 +1,13 @@
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\BowlingScorer.dll
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\BowlingScorer.pdb
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\ApprovalTests.dll
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\ApprovalUtilities.dll
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\nunit.framework.dll
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\ApprovalTests.pdb
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\ApprovalTests.xml
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\ApprovalUtilities.pdb
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\ApprovalUtilities.xml
+C:\Projects\BowlingScorer\BowlingScorer\bin\Debug\nunit.framework.xml
+C:\Projects\BowlingScorer\BowlingScorer\obj\Debug\BowlingScorer.csprojResolveAssemblyReference.cache
+C:\Projects\BowlingScorer\BowlingScorer\obj\Debug\BowlingScorer.dll
+C:\Projects\BowlingScorer\BowlingScorer\obj\Debug\BowlingScorer.pdb

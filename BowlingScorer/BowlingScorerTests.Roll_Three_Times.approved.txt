@@ -1,3 +1,11 @@
 ﻿Score : 12
 1 : Rolls : 3, 4 | 7
 2 : Rolls : 5 | 5
+3 : Rolls :  | 0
+4 : Rolls :  | 0
+5 : Rolls :  | 0
+6 : Rolls :  | 0
+7 : Rolls :  | 0
+8 : Rolls :  | 0
+9 : Rolls :  | 0
+10 : Rolls :  | 0
